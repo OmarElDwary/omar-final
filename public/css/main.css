@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;800&family=Fira+Sans:wght@300&family=Rubik:wght@300;500&display=swap");
+/* sass */
+/* global variables */
+button, button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.font-cairo {
+  font-family: "Cairo", cursive;
+}
+
+.font-rubik {
+  font-family: "Rubik", cursive;
+}
+
+.font-fira {
+  font-family: "Fira Sans", cursive;
+}
+
+.font-size-12 {
+  font-size: 12px;
+}
+
+.font-size-16 {
+  font-size: 16px;
+}
+
+.font-size-18 {
+  font-size: 18px;
+}
+
+.font-size-20 {
+  font-size: 20px;
+}
+
+/* color temp */
+.color-primary {
+  color: #2d3436;
+}
+
+.color-secondary {
+  color: #dfe6e9;
+}
+
+.color-third {
+  color: #be63b7;
+}
+
+.color-last {
+  color: #d63031;
+}
+
+.color-last-bg {
+  background: #d63031;
+}
+
+.color-secondary-bg {
+  background: #dfe6e9;
+}
+
+.color-black {
+  color: #060001;
+}
+
+.color-black-bg {
+  background-color: #060001;
+}
+
+/*# sourceMappingURL=style.css.map */
+
+.carousel {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.carousel > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 200ms opacity ease-in-out;
+  transition-delay: 200ms;
+}
+
+.slide > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slide[data-active] {
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0ms;
+}
+
+.carousel-button {
+  position: absolute;
+  z-index: 2;
+  background: none;
+  border: none;
+  font-size: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, .5);
+  cursor: pointer;
+  border-radius: .25rem;
+  padding: 0 .5rem;
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+  color: white;
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.carousel-button:focus {
+  outline: 1px solid black;
+}
+
+.carousel-button.prev {
+  left: 1rem;
+}
+
+.carousel-button.next {
+  right: 1rem;
+}
