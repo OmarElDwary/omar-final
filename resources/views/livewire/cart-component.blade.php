@@ -10,7 +10,7 @@
                         <!-- cart item -->
                             <div class="row border-top py-3 mt-3">
                                 <div class="col-sm-2">
-                                    <img src="./images/classic shirt.jpg" style="height: 120px;" alt="cart1" class="img-fluid">
+                                    <img src="{{(/images/)}}/{{$item->model->image}}" style="height: 120px;" alt="{{$item->model->name}}" class="img-fluid">
                                 </div>
                                 <div class="col-sm-8">
                                     <h5 class="font-cairo font-size-20">Classic Tshirt</h5>
@@ -30,9 +30,9 @@
                                     <!-- product qty -->
                                         <div class="qty d-flex pt-2">
                                             <div class="d-flex font-rale w-25">
-                                                <button class="qty-up border bg-light" data-id="pro1"><i class="fas fa-angle-up"></i></button>
+                                                <button wire:ckick.prevent="increaseQuantity('{{$item->rowId}}')" class="qty-up border bg-light" data-id="pro1"><i class="fas fa-angle-up"></i></button>
                                                 <input type="text" data-id="pro1" class="qty_input border px-2 w-100 bg-light" disabled value="1" placeholder="1">
-                                                <button data-id="pro1" class="qty-down border bg-light"><i class="fas fa-angle-down"></i></button>
+                                                <button wire:ckick.prevent="decreaseQuantity('{{$item->rowId}}') data-id="pro1" class="qty-down border bg-light"><i class="fas fa-angle-down"></i></button>
                                             </div>
                                             <button type="submit" class="btn font-cairo text-danger px-3 border-right">Delete</button>
                                             <button type="submit" class="btn font-cairo text-danger">Save for Later</button>
@@ -43,7 +43,7 @@
 
                                 <div class="col-sm-2 text-right">
                                     <div class="font-size-20 text-danger font-cairo">
-                                        $<span class="product_price">15</span>
+                                        $<span class="product_price">{{$item->subtotal}}</span>
                                     </div>
                                 </div>
                             </div>

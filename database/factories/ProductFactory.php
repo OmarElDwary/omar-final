@@ -25,7 +25,7 @@ class ProductFactory extends Factory
             'SKU'=> 'DIGI' .$this->faker->unique()->numberBetween(100,500),
             'stock_status'=> 'instock',
             'quantity' => $this->faker->numberBetween(100,200),
-            'image' => 'blouse' . $this->faker->unique()->numberBetween(1,22). ',jpg',
+            'image' => 'product' . $this->faker->unique()->numberBetween(1,22). ',jpg',
             'categories_id' => $this->faker->numberBetween(1,5)
         ];
     }

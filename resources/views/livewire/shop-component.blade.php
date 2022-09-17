@@ -1,5 +1,6 @@
 <section id="product" class="py-3">
     <div class="container">
+        @foreach ($products as $product)
         <div class="row">
             <div class="col-sm-6">
                 <img src="./images/classic shirt.jpg" alt="product" class="img-fluid">

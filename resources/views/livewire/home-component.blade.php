@@ -30,12 +30,13 @@
         </div>
 
         <div class="grid">
+          @foreach ($products as $product)
           <div class="grid-item Men border">
            <div class="item py-2" style="width: 200px;">
             <div class="product font-rale">
-              <a href="#"><img src="./images/men jacket.jpg" alt="product1" class="img-fluid"></a>
+              <a href="#"><img src="(/images)/{{$product->image}}" alt="{{$product->name}}" class="img-fluid"></a>
               <div class="text-center">
-                <h6>Male Kangroo Jacket</h6>
+                <h6>{{$product->name}} </h6>
                 <div class="rating color-last font-size-12">
                   <span><i class="fas fa-star"></i></span>
                   <span><i class="fas fa-star"></i></span>
@@ -44,145 +45,14 @@
                   <span><i class="far fa-star"></i></span>
                 </div>
                 <div class="price py-2">
-                  <span>$13</span>
+                  <span>{{$product->price}} </span>
                 </div>
-                <button type="submit" class="btn btn-danger color-third-bg font-size-12">Add to Cart</button>
+                <button type="submit" class="btn btn-danger color-third-bg font-size-12" wire:click.prevent"store({{$product->id,'{{$product->name}}'}},{{$product->price}})">Add to Cart</button>
               </div>
             </div>
           </div>
           </div>
-          <div class="grid-item Women border">
-            <div class="item py-2" style="width: 200px;">
-             <div class="product font-rale">
-               <a href="#"><img src="./images/Woman Coat.jpg" alt="product1" class="img-fluid"></a>
-               <div class="text-center">
-                 <h6>Trench Coat</h6>
-                 <div class="rating color-last font-size-12">
-                   <span><i class="fas fa-star"></i></span>
-                   <span><i class="fas fa-star"></i></span>
-                   <span><i class="fas fa-star"></i></span>
-                   <span><i class="fas fa-star"></i></span>
-                   <span><i class="fas fa-star"></i></span>
-                 </div>
-                 <div class="price py-2">
-                   <span>$119</span>
-                 </div>
-                 <button type="submit" class="btn btn-danger font-size-12">Add to Cart</button>
-               </div>
-             </div>
-           </div>
-           </div>
-           <div class="grid-item Kids border">
-            <div class="item py-2" style="width: 200px;">
-             <div class="product font-rale">
-               <a href="#"><img src="./images/kid tshirt1.jpg" alt="product1" class="img-fluid"></a>
-               <div class="text-center">
-                 <h6>Boys Tshirt</h6>
-                 <div class="rating color-last font-size-12">
-                   <span><i class="fas fa-star"></i></span>
-                   <span><i class="fas fa-star"></i></span>
-                   <span><i class="fas fa-star"></i></span>
-                   <span><i class="fas fa-star"></i></span>
-                   <span><i class="far fa-star"></i></span>
-                 </div>
-                 <div class="price py-2">
-                   <span>$17</span>
-                 </div>
-                 <button type="submit" class="btn btn-danger font-size-12">Add to Cart</button>
-               </div>
-             </div>
-           </div>
-           </div>
-           <div class="grid-item Men border">
-            <div class="item py-2" style="width: 200px;">
-             <div class="product font-rale">
-               <a href="#"><img src="./images/men jacket2.jpg" alt="product1" class="img-fluid"></a>
-               <div class="text-center">
-                 <h6>Men thick hooded coat</h6>
-                 <div class="rating color-last font-size-12">
-                   <span><i class="fas fa-star"></i></span>
-                   <span><i class="fas fa-star"></i></span>
-                   <span><i class="fas fa-star"></i></span>
-                   <span><i class="fas fa-star"></i></span>
-                   <span><i class="far fa-star"></i></span>
-                 </div>
-                 <div class="price py-2">
-                   <span>$22</span>
-                 </div>
-                 <button type="submit" class="btn btn-danger font-size-12">Add to Cart</button>
-               </div>
-             </div>
-           </div>
-           </div>
-           <div class="grid-item Women border">
-            <div class="item py-2" style="width: 200px;">
-             <div class="product font-rale">
-               <a href="#"><img src="./images/women coat111.jpg" alt="product1" class="img-fluid"></a>
-               <div class="text-center">
-                 <h6>Women Black Coat</h6>
-                 <div class="rating color-last font-size-12">
-                   <span><i class="fas fa-star"></i></span>
-                   <span><i class="fas fa-star"></i></span>
-                   <span><i class="fas fa-star"></i></span>
-                   <span><i class="fas fa-star"></i></span>
-                   <span><i class="fas fa-star"></i></span>
-                 </div>
-                 <div class="price py-2">
-                   <span>$152</span>
-                 </div>
-                 <button type="submit" class="btn btn-danger font-size-12">Add to Cart</button>
-               </div>
-             </div>
-           </div>
-           </div>
-           <div class="grid-item  Kids border ">
-            <div class="item py-2" style="width: 200px;">
-              <div class="product font-rale">
-                <div class="d-flex flex-column">
-                  <a href="#"><img src="./images/kid.jpg" class="img-fluid" alt="pro1"></a>
-                  <div class="text-center">
-                    <h6>Long Sleeve Girls T-Shirt</h6>
-                    <div class="rating color-last font-size-12">
-                      <span><i class="fas fa-star"></i></span>
-                      <span><i class="fas fa-star"></i></span>
-                      <span><i class="fas fa-star"></i></span>
-                      <span><i class="fas fa-star"></i></span>
-                      <span><i class="far fa-star"></i></span>
-                    </div>
-                    <div class="price py-2">
-                      <span>$21</span>
-                    </div>
-                    <button type="submit" class="btn btn-danger font-size-12">Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="grid-item Men border  " >
-            <div class="item py-2" style="width: 200px;">
-              <div class="product font-rale">
-                <div class="d-flex flex-column">
-                  <a href="#"><img src="./images/men tshirt.jpg" class="img-fluid" alt="pro1"></a>
-                  <div class="text-center">
-                    <h6>Men Sweater</h6>
-                    <div class="rating color-last font-size-12">
-                      <span><i class="fas fa-star"></i></span>
-                      <span><i class="fas fa-star"></i></span>
-                      <span><i class="fas fa-star"></i></span>
-                      <span><i class="fas fa-star"></i></span>
-                      <span><i class="far fa-star"></i></span>
-                    </div>
-                    <div class="price py-2">
-                      <span>$12</span>
-                    </div>
-                    <button type="submit" class="btn btn-danger font-size-12">Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+          @endforeach   
     </section>
     <!--Banners-->
     <section id="banner_adds">
